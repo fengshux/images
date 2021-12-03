@@ -1,0 +1,9 @@
+FROM debian:stable
+
+RUN apt update
+RUN apt install -y ghostscript imagemagick vim jq 
+RUN sed -i '/PDF/s/none/read|write/g' /etc/ImageMagick-6/policy.xml
+
+VOLUME ["/root"]
+
+CMD ["/bin/bash"]
