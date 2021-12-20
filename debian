@@ -1,7 +1,7 @@
 FROM debian:stable
 
 RUN apt update
-RUN apt install -y ghostscript imagemagick vim jq 
+RUN apt install -y ghostscript imagemagick vim jq wget curl htop
 RUN sed -i '/PDF/s/none/read|write/g' /etc/ImageMagick-6/policy.xml
 
 VOLUME ["/root"]
